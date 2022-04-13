@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark: #350363;
+  --background: #ffe9db;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background-color: #491579;
+}
+main {
+  width: 30vw;
+  text-align: center;
+  background-color: var(--background);
+  border: 1px solid var(--dark);
+  border-radius: 10px;
+  padding: 2rem 5rem;
+  color: #1f2933;
+}
+h2 {
+  font-size: 2.2rem;
+  text-transform: capitalize;
+  margin: 1rem;
+}
+h3 {
+  font-size: 3rem;
+}
+p {
+  font-size: 1.8rem;
+}
+.image {
+  width: 90%;
+  max-height: 22rem;
+  height: auto;
+  margin: 1rem 0 3.5rem 0;
+}
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+button {
+  min-width: 28rem;
+  background-image: linear-gradient(
+    92.88deg,
+    #455eb5 9.16%,
+    #5643cc 43.89%,
+    #673fd7 64.72%
+  );
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 1.5rem 6rem;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  text-transform: capitalize;
+  /* touch-action: manipulation; */
+}
+
+button:hover {
+  box-shadow: rgba(80, 63, 205, 0.2) 0 1px 30px;
+  transition-duration: 0.1s;
+}
+button:last-child {
+  background: var(--dark);
+  margin-bottom: 0;
+}
+/****************************************
+        Welcome Screen
+*****************************************/
+/* #welcomeScreen {
+  height: 60vh;
+} */
+
+/****************************************
+        Game Area
+*****************************************/
+#gameArea {
+  min-height: 40vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#newGameButton {
+  margin: 2rem 0;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input {
+  border: 1px solid lightgray;
+  background: transparent;
+  margin: 4rem 0;
+  padding: 2rem 0;
+  width: 25rem;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.stats {
+  text-align: left;
+  margin-bottom: 4rem;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info span {
+  font-size: 2rem;
+  color: #ff0511;
+}
+
+/****************************************
+        For responsiveness 
+*****************************************/
+@media (max-width: 1200px) {
+  body {
+    width: 100vw;
+  }
+  main {
+    width: 50vw;
+    padding: 2rem;
+  }
+  input {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    width: 100vw;
+  }
+  main {
+    width: 80vw;
+    padding: 2rem;
+  }
+  button {
+    min-width: 20rem;
+  }
+  input {
+    width: 20rem;
+  }
+  #newGameButton {
+    margin: 2rem 0;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .info span {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 336px) {
+  html {
+    font-size: 50%;
+  }
+  main {
+    min-width: 190px;
+  }
+}
