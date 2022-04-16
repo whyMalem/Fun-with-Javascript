@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+p {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: repeat(4, 8rem);
+  grid-gap: 2rem;
+  perspective: 800px;
+  padding: 1rem;
+}
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+  transform: rotateY(0deg);
+}
+
+.face,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+}
+.back {
+  background-color: cyan;
+  backface-visibility: hidden;
+}
+.toggleCard {
+  transform: rotateY(180deg);
+}
+.restart-btn {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.6rem;
+  margin: 0.8rem 0;
+  background-color: rgba(95, 158, 160, 0.9);
+  color: whitesmoke;
+  border: 0.5px solid cadetblue;
+  cursor: pointer;
+  border-radius: 1.2rem;
+  letter-spacing: 2px;
+  display: none;
+}
+.restart-btn:hover {
+  background-color: cadetblue;
+}
+
+@media (max-width: 520px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 265px) {
+  section {
+    grid-template-columns: repeat(3, 5rem);
+    grid-template-rows: repeat(5, 5rem);
+  }
+}
+@media (max-width: 172px) {
+  section {
+    grid-template-columns: repeat(2, 5rem);
+    grid-template-rows: repeat(6, 5rem);
+  }
+}
