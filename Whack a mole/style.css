@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: rgb(58, 129, 0);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: none;
+}
+.box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: 1px solid #fff;
+  padding: 0.8rem;
+}
+h3 {
+  font-size: 1.4rem;
+  /* margin-bottom: 1rem; */
+}
+.score,
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.score span,
+.countdown span {
+  margin: 0px 2px;
+}
+.board {
+  height: 500px;
+  width: 500px;
+  /* border: 1px solid #000; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 40px;
+}
+.hole {
+  /* background-color: cyan; */
+  background-color: rgb(165, 85, 11);
+  border-radius: 50%;
+  box-shadow: inset 0 10px 0 7px rgb(53, 21, 6),
+    inset 0 20px 20px 15px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+.hole .mole {
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  animation: raise 0.3s ease-out;
+}
+@keyframes raise {
+  0% {
+    transform: translateX(-50%) translateY(100%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+.cursor {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  /* background-color: rgb(165, 85, 11); */
+  background-image: url("./assets/hammer.png");
+  background-size: 100% 100%;
+  transform: translate(-20%, -20%);
+  transition: transform 0.1s;
+  pointer-events: none;
+}
+
+.cursor.active {
+  transform: translate(-20%, -20%) rotate(-45deg);
+}
+.finalScore {
+  display: none;
+  border: 1px solid #fff;
+  padding: 1rem;
+  width: 320px;
+  text-align: center;
+}
+.restartBtn {
+  display: none;
+  padding: 0.5rem 1rem;
+  background-color: teal;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border: 1px solid teal;
+  color: #fff;
+  margin: 10px 0;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.restartBtn:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
